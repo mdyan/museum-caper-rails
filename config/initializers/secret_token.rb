@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-MuseumCaperOnline::Application.config.secret_token = '0d578b20018483060356bd90e9ee31469a78ffab0e9d711d5591920e5cc37c09448d598bf3062d0fed81ca6ad57c135c8eda88bdcd07045294a3c6972f2276af'
+MuseumCaperOnline::Application.config.secret_token = '026675a30eea82d24c850732af2cc72489af70ecaae8344cacc80b3d6c24b37a5a0a8a0714f592bdcfce0bf46f59327033c7a8e4a04ccba3a9238d8b6bb2e84d'
