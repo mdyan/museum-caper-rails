@@ -5,8 +5,13 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# gem 'pg'
-
+#heroku doesn't use sqlite..uses postgresql
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -14,7 +19,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
+  gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -22,11 +27,11 @@ end
 group :test, :development do
   gem 'rspec-rails', "~> 2.0"
   gem 'jasmine-rails'
-  gem 'sqlite3'
 end
 
+gem 'heroku'
+
 gem 'jquery-rails'
-gem 'therubyracer'
 gem "rails-backbone"
 
 # To use ActiveModel has_secure_password
