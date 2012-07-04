@@ -5,10 +5,7 @@ class GamesController < ApplicationController
     user_signed_in?
     @games = Game.all
   end
-   def show				#view all games
-      @games = Game.find(:all)
-   end
-   def get				#retrieve game by id
+   def show				#retrieve game by id
       @game = Game.find(params[:id])
    end					#make a new game object
    def new
@@ -17,8 +14,12 @@ class GamesController < ApplicationController
 					#trust the rails magic :X
    def create
       @game = Game.new(params[:game])
-      @game.save			#trusting that rails magic to do it right...
-      redirect_to :action => 'show'
+      @game.started_at = Time.now
+      if @game.save			         
+         redirect_to :action => 'index'
+      else 
+         redirect_to :action => 'create'
+      end
    end					#re-persist a game object
    def update
       @game = Game.find(params[:id])
@@ -26,6 +27,6 @@ class GamesController < ApplicationController
    end
    def destroy				#KABOOM
       Game.find(params[:id]).destroy
-      redirect_to :action => 'show'
+      redirect_to :action => 'index'
    end
 end
