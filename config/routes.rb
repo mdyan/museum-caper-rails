@@ -1,7 +1,8 @@
 MuseumCaperOnline::Application.routes.draw do
   root to: 'games#index'
   resources :games
-
+  match 'games/create' => 'games#create'
+  match 'games/show' => 'games#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
