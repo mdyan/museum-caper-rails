@@ -5,10 +5,6 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#heroku doesn't use sqlite..uses postgresql
-group :development, :test do
-  gem 'sqlite3'
-end
 group :production do
   gem 'pg'
 end
@@ -27,10 +23,11 @@ end
 group :test, :development do
   gem 'rspec-rails', "~> 2.0"
   gem 'jasmine-rails'
+  gem 'sqlite3'
 end
 
 gem 'heroku'
-
+gem 'devise'
 gem 'jquery-rails'
 gem "rails-backbone"
 

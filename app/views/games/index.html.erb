@@ -1,0 +1,20 @@
+<h1>Ongoing Games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Players</th>
+      <th>Started At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |g| %>
+      <tr>
+        <td><%= g.name %></td>
+        <td></td>
+        <td><%= g.created_at.strftime("%D") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,4 +1,10 @@
 class GamesController < ApplicationController
+  before_filter :authenticate_user!
+
+  def index
+    user_signed_in?
+    @games = Game.all
+  end
    def show				#view all games
       @games = Game.find(:all)
    end
@@ -7,9 +13,9 @@ class GamesController < ApplicationController
    end					#make a new game object
    def new
       @game = Game.new
-   end					#make a new game object in the db from a game object. 
+   end					#make a new game object in the db from a game object.
 					#trust the rails magic :X
-   def create				
+   def create
       @game = Game.new(params[:game])
       @game.save			#trusting that rails magic to do it right...
       redirect_to :action => 'show'

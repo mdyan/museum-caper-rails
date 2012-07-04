@@ -1,4 +1,6 @@
 MuseumCaperOnline::Application.routes.draw do
+  devise_for :users
+
   root to: 'games#index'
   resources :games
   match 'games/create' => 'games#create'
