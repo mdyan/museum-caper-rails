@@ -1,0 +1,9 @@
+<h2>I am creating a new game! this will be fun!<h2>
+
+<%=form_tag :action =>'create', :method=>'post' do %>
+<p><label for="name">Name:</label>:
+<%= text_field 'game', 'name' %></p>
+
+<%= submit_tag "Start Game"%>
+<%end%>
+<%=link_to 'Back', {:action => 'index'}%>
