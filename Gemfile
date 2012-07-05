@@ -22,14 +22,14 @@ end
 
 group :test, :development do
   gem 'rspec-rails', "~> 2.0"
-  gem 'jasmine-rails'
+  #gem 'jasmine-rails' # doesn't work in windows
   gem 'sqlite3'
 end
 
 gem 'heroku'
 gem 'devise'
 gem 'jquery-rails'
-gem "rails-backbone"
+gem 'rails-backbone'
 
 gem 'bootstrap-sass'
 
