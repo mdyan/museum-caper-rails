@@ -18,11 +18,12 @@ class GamesController < ApplicationController
     @game = Game.new(params[:game])
     @game.started_at = Time.now
     if @game.save
+      flash[:notice] = "Game '#{@game.name}' created!"
       redirect_to :action => 'index'
     else
-      redirect_to :action => 'create'
+      flash[:alert] = "Bad game name.  Not created."
     end
-  end					#re-persist a game object
+  end
 
   def update
     @game = Game.find(params[:id])

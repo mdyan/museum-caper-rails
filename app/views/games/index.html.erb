@@ -11,7 +11,7 @@
   <tbody>
     <% @games.each do |g| %>
       <tr>
-        <td><%= g.name %></td>
+        <td><%= link_to g.name, game_path(g) %></td>
         <td></td>
         <td><%= g.created_at.strftime("%D") %></td>
       </tr>
