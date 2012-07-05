@@ -12,7 +12,7 @@ class GamesController < ApplicationController
   def new
     user_signed_in?
     @game = Game.new
-  end			#trust the rails magic :X
+  end
 
   def create
     @game = Game.new(params[:game])

@@ -1,6 +1,7 @@
-<%= form_for(@game) do |f| %>
-  <%= f.label 'Game Name:' %>
-  <%= f.text_field :name %>
-
-  <%= f.submit %>
+<div class="page-header">
+  <h1>I am creating a new game! This will be fun!</h1>
+</div>
+<%= form_for @game, :html => {:class => "well" } do |f| %>
+  <%= f.text_field :name, :placeholder => "Type a game name" %>
+  <div class="submit"><%= f.button %></div>
 <% end %>
